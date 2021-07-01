@@ -1,4 +1,4 @@
-package _1_decorator._99_exercice;
+package _decorator_._exercice;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

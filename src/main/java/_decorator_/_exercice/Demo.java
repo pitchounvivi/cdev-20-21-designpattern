@@ -1,16 +1,16 @@
-package _1_decorator._99_exercice;
+package _decorator_._exercice;
 
 
 public class Demo {
     public static void main(String[] args) {
-        // exemple de données à sauvegarder encrypter et compressé
-        String salaryRecords = "Name,Salary\nJohn Smith,100000\nSteven Jobs,912000";
+        // exemple de données à sauvegarder encrypter et compresser
+        String data = "Name,Salary\nJohn Smith,100000\nSteven Jobs,912000";
 
         FileDataSource fileDataSource = new FileDataSource("OutputDemo.txt");
 
         Encryptor encryptor = new Encryptor();
         Compressor compressor = new Compressor();
-        String encrypted = encryptor.encode(salaryRecords);
+        String encrypted = encryptor.encode(data);
         String encryptedAndCompressed = compressor.compress(encrypted);
         fileDataSource.writeData(encryptedAndCompressed);
 
@@ -19,7 +19,7 @@ public class Demo {
         String readData = fileDataSource.readData();
 
         System.out.println("- Input ----------------");
-        System.out.println(salaryRecords);
+        System.out.println(data);
         System.out.println("- Encoded --------------");
         System.out.println(readData);
         System.out.println("- Decoded --------------");

@@ -1,18 +1,17 @@
-package _1_decorator._99_exercice;
+package _decorator_._exercice;
 
 import java.io.*;
 
 /**
  * Datasource de type fichier. Il pourrait avoir d'autre implémentation : sql, webservice...
  */
-public class FileDataSource implements DataSource {
+public class FileDataSource {
     private String name;
 
     public FileDataSource(String name) {
         this.name = name;
     }
 
-    @Override
     public void writeData(String data) {
         File file = new File(name);
         try (OutputStream fos = new FileOutputStream(file)) {
@@ -22,7 +21,6 @@ public class FileDataSource implements DataSource {
         }
     }
 
-    @Override
     public String readData() {
         char[] buffer = null;
         File file = new File(name);
