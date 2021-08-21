@@ -5,13 +5,14 @@ import java.io.*;
 /**
  * Datasource de type fichier. Il pourrait avoir d'autre implémentation : sql, webservice...
  */
-public class FileDataSource {
+public class FileDataSource implements FileDataSourceInterface{
     private String name;
 
     public FileDataSource(String name) {
         this.name = name;
     }
 
+    @Override
     public void writeData(String data) {
         File file = new File(name);
         try (OutputStream fos = new FileOutputStream(file)) {
@@ -21,6 +22,7 @@ public class FileDataSource {
         }
     }
 
+    @Override
     public String readData() {
         char[] buffer = null;
         File file = new File(name);
@@ -32,4 +34,5 @@ public class FileDataSource {
         }
         return new String(buffer);
     }
+
 }
