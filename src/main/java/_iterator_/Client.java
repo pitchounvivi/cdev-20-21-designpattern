@@ -43,12 +43,23 @@ public class Client {
 
         }
 
-        Arbre2 arbre2 = new Arbre2();
-        for (Object o : arbre2) {
 
+
+        //Arbre2 arbre2 = new Arbre2();
+
+        System.out.println("======Exo 4 == Arbre2 ==");
+        Arbre2 a2 = new Arbre2("A2");
+        Arbre2 b2 = new Arbre2("B2");
+        Arbre2 c2 = new Arbre2("C2");
+        Arbre2 d2 = new Arbre2("D2");
+        a2.setSousArbreGauche(b2);
+        a2.setSousArbreDroit(c2);
+        c2.setSousArbreGauche(d2);
+        for (Arbre2 arbre2 : a2) {
+            System.out.println(arbre2.getValeur());
         }
 
-
+        System.out.println("======FIN Exo 4 ==");
     }
 
     // Déplacer cette responsabilité dans ArbreIterator
